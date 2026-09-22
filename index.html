@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- ==================================================
+         CONFIGURACIÓN BÁSICA
+         ================================================== -->
+
+    <!-- Permite utilizar caracteres como ñ, á, é, 💛, 🌻, etc. -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte correctamente a celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nombre que aparecerá en la pestaña del navegador -->
+    <title>Para ti 🌻</title>
+
+
+    <!-- ==================================================
+         ARCHIVOS CSS
+         ================================================== -->
+
+    <!-- Estilos generales de toda la página -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos específicos de las flores -->
+    <link rel="stylesheet" href="css/flores.css">
+
+    <!-- Estilos para celulares y tablets -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         PANTALLA DE INICIO
+         ================================================== -->
+
+    <section id="inicio">
+
+        <!-- Título principal -->
+        <h1 class="titulo-inicial">
+            🌻 Para ti 🌻
+        </h1>
+
+
+        <!-- Pequeña introducción -->
+        <p class="subtitulo">
+            Tengo algo pequeño que quiero regalarte...
+        </p>
+
+
+        <!--
+
+            Este botón tiene dos funciones:
+
+            1. Ocultar la pantalla inicial.
+            2. Intentar reproducir la música.
+
+        -->
+
+        <button
+            class="boton-abrir"
+            id="botonAbrir">
+
+            🌻 Abrir mi regalo
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         REPRODUCTOR DE MÚSICA
+         ================================================== -->
+
+    <!--
+
+        La música NO se reproduce automáticamente.
+
+        El navegador normalmente bloquea el autoplay
+        con sonido.
+
+        Al presionar "Abrir mi regalo", JavaScript
+        iniciará esta canción.
+
+    -->
+
+    <audio id="musicaFondo" loop>
+
+        <source
+            src="audio/floresamarillas.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+
+    <!-- ==================================================
+         ESCENA PRINCIPAL
+         ================================================== -->
+
+    <main class="escena">
+
+
+        <!-- Luna decorativa -->
+        <div class="luna"></div>
+
+
+
+        <!-- ==================================================
+             ESTRELLAS
+             ================================================== -->
+
+        <div class="estrella estrella-1"></div>
+        <div class="estrella estrella-2"></div>
+        <div class="estrella estrella-3"></div>
+        <div class="estrella estrella-4"></div>
+        <div class="estrella estrella-5"></div>
+        <div class="estrella estrella-6"></div>
+        <div class="estrella estrella-7"></div>
+        <div class="estrella estrella-8"></div>
+
+
+
+        <!-- ==================================================
+             MENSAJE PRINCIPAL
+             ================================================== -->
+
+        <section class="mensaje">
+
+            <h1 id="tituloMensaje"></h1>
+
+            <p id="textoMensaje"></p>
+
+            <div
+                class="firma"
+                id="firmaMensaje">
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CAMPO DE FLORES
+             ================================================== -->
+
+        <div class="campo-flores">
+
+
+            <!-- Flor 1 -->
+            <div class="flor flor-1">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 2 -->
+            <div class="flor flor-2">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 3 -->
+            <div class="flor flor-3">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 4 -->
+            <div class="flor flor-4">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 5 -->
+            <div class="flor flor-5">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 6 -->
+            <div class="flor flor-6">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+            <!-- Flor 7 -->
+            <div class="flor flor-7">
+
+                <div class="petalos"></div>
+
+                <div class="tallo"></div>
+
+                <div class="hoja izquierda"></div>
+
+                <div class="hoja derecha"></div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SUELO
+             ================================================== -->
+
+        <div class="suelo"></div>
+
+
+
+        <!-- ==================================================
+             BOTÓN DE MÚSICA
+             ================================================== -->
+
+        <button
+            class="musica"
+            id="botonMusica"
+            title="Controlar música">
+
+            🔊
+
+        </button>
+
+
+
+        <!-- ==================================================
+             BOTÓN PARA ABRIR LA CARTA
+             ================================================== -->
+
+        <button
+            class="boton-mensaje"
+            id="botonCarta">
+
+            💌 Hay algo más...
+
+        </button>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         CARTA / MENSAJE ESPECIAL
+         ================================================== -->
+
+    <div
+        class="carta"
+        id="carta">
+
+
+        <div class="carta-contenido">
+
+
+            <h2 id="tituloCarta"></h2>
+
+
+            <p id="textoCarta"></p>
+
+
+            <button
+                class="cerrar"
+                id="botonCerrarCarta">
+
+                Cerrar 💛
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         ARCHIVOS JAVASCRIPT
+         ================================================== -->
+
+    <!--
+        Primero cargamos la configuración.
+
+        Aquí están los textos personalizados.
+    -->
+
+    <script src="config/mensajes.js"></script>
+
+
+    <!--
+        Control de la música.
+    -->
+
+    <script src="js/musica.js"></script>
+
+
+    <!--
+        Efectos visuales.
+    -->
+
+    <script src="js/efectos.js"></script>
+
+
+    <!--
+        Funciones principales.
+
+        Este se carga al final porque utiliza
+        elementos creados anteriormente.
+    -->
+
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

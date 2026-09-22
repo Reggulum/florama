@@ -1,0 +1,467 @@
+/* =========================================
+   CAMPO DE FLORES
+   ========================================= */
+
+.campo-flores {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 20;
+}
+
+
+/* =========================================
+   FLOR INDIVIDUAL
+   ========================================= */
+
+.flor {
+    position: absolute;
+    bottom: 0;
+    width: 90px;
+    height: 180px;
+    transform-origin: bottom center;
+    z-index: 25;
+}
+
+
+/* =========================================
+   TALLO
+   ========================================= */
+
+.tallo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 5px;
+    height: 130px;
+
+    background: linear-gradient(
+        to right,
+        #28551f,
+        #4f8a35,
+        #28551f
+    );
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================
+   PETALOS
+   ========================================= */
+
+.petalos {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+
+    width: 70px;
+    height: 70px;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================
+   PETALOS PRINCIPALES
+   ========================================= */
+
+.petalos::before,
+.petalos::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 48px;
+
+    background: linear-gradient(
+        to bottom,
+        #fff89a 0%,
+        #ffe13b 45%,
+        #ffc928 75%,
+        #e7a900 100%
+    );
+
+    border-radius: 60% 60% 45% 45%;
+
+    left: 23px;
+    top: 0;
+
+    transform-origin: 50% 100%;
+}
+
+
+/* Petalo izquierdo */
+
+.petalos::before {
+    transform: rotate(45deg);
+}
+
+
+/* Petalo derecho */
+
+.petalos::after {
+    transform: rotate(-45deg);
+}
+
+
+/* =========================================
+   PETALO CENTRAL
+   ========================================= */
+
+.flor::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 8px;
+    left: 50%;
+
+    width: 25px;
+    height: 48px;
+
+    background: linear-gradient(
+        to bottom,
+        #fff89a,
+        #ffd21c 65%,
+        #e7a900
+    );
+
+    border-radius: 60% 60% 45% 45%;
+
+    transform: translateX(-50%);
+
+    transform-origin: 50% 100%;
+
+}
+
+
+/* =========================================
+   CENTRO DE LA FLOR
+   ========================================= */
+
+.flor::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 32px;
+    left: 50%;
+
+    width: 28px;
+    height: 28px;
+
+    transform: translateX(-50%);
+
+    background: radial-gradient(
+        circle,
+        #704500 0%,
+        #9a6100 35%,
+        #c08300 65%,
+        #e1a900 100%
+    );
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px rgba(255, 193, 7, 0.35);
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   HOJAS
+   ========================================= */
+
+.hoja {
+
+    position: absolute;
+
+    width: 38px;
+    height: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #5d9d3b,
+        #285b24
+    );
+
+    border-radius: 100% 0 100% 0;
+
+    bottom: 65px;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Hoja izquierda */
+
+.hoja.izquierda {
+    left: 4px;
+    transform: rotate(-30deg);
+}
+
+
+/* Hoja derecha */
+
+.hoja.derecha {
+    right: 4px;
+    transform: rotate(30deg) scaleX(-1);
+}
+
+
+/* =========================================
+   POSICION DE LAS FLORES
+   ========================================= */
+
+.flor-1 {
+    left: 3%;
+    transform: scale(0.85);
+}
+
+.flor-2 {
+    left: 16%;
+    transform: scale(1.15);
+}
+
+.flor-3 {
+    left: 30%;
+    transform: scale(0.78);
+}
+
+.flor-4 {
+    left: 45%;
+    transform: scale(1.25);
+}
+
+.flor-5 {
+    left: 60%;
+    transform: scale(0.92);
+}
+
+.flor-6 {
+    left: 75%;
+    transform: scale(1.12);
+}
+
+.flor-7 {
+    left: 88%;
+    transform: scale(0.82);
+}
+
+
+/* =========================================
+   MOVIMIENTO CON EL VIENTO
+   ========================================= */
+
+.flor-1,
+.flor-4,
+.flor-6 {
+
+    animation:
+        vientoSuave 4s ease-in-out infinite;
+
+}
+
+.flor-2,
+.flor-5,
+.flor-7 {
+
+    animation:
+        vientoSuave 5s ease-in-out infinite reverse;
+
+}
+
+.flor-3 {
+
+    animation:
+        vientoSuave 4.5s ease-in-out infinite;
+
+}
+
+
+@keyframes vientoSuave {
+
+    0% {
+        rotate: -2deg;
+    }
+
+    50% {
+        rotate: 3deg;
+    }
+
+    100% {
+        rotate: -2deg;
+    }
+
+}
+
+
+/* =========================================
+   FLORES QUE CAEN
+   ========================================= */
+
+.flor-cayendo {
+
+    position: fixed;
+
+    top: -80px;
+
+    width: 38px;
+    height: 38px;
+
+    z-index: 1000;
+
+    pointer-events: none;
+
+    animation-name: caerFlor;
+
+    animation-timing-function: linear;
+
+    animation-fill-mode: forwards;
+
+}
+
+
+/* =========================================
+   PETALOS DE LAS FLORES QUE CAEN
+   ========================================= */
+
+.flor-cayendo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 28px;
+
+    left: 12px;
+    top: 0;
+
+    background: linear-gradient(
+        to bottom,
+        #fff59a,
+        #ffd21c,
+        #e5a400
+    );
+
+    border-radius: 70% 70% 45% 45%;
+
+    box-shadow:
+
+        14px 5px 0 #ffd21c,
+
+        -14px 5px 0 #ffe35a,
+
+        9px 18px 0 #ffc107,
+
+        -9px 18px 0 #ffda28;
+
+}
+
+
+/* =========================================
+   CENTRO DE LAS FLORES QUE CAEN
+   ========================================= */
+
+.flor-cayendo::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    left: 12px;
+    top: 13px;
+
+    background: radial-gradient(
+        circle,
+        #7a4d00,
+        #b47700 60%,
+        #d69b00
+    );
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================
+   ANIMACION DE CAIDA
+   ========================================= */
+
+@keyframes caerFlor {
+
+    0% {
+
+        transform:
+            translateY(-80px)
+            translateX(0)
+            rotate(0deg)
+            scale(var(--tamaño));
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 1;
+
+    }
+
+
+    30% {
+
+        transform:
+            translateY(30vh)
+            translateX(60px)
+            rotate(120deg)
+            scale(var(--tamaño));
+
+    }
+
+
+    60% {
+
+        transform:
+            translateY(65vh)
+            translateX(-60px)
+            rotate(240deg)
+            scale(var(--tamaño));
+
+    }
+
+
+    100% {
+
+        transform:
+            translateY(115vh)
+            translateX(80px)
+            rotate(360deg)
+            scale(var(--tamaño));
+
+        opacity: 0;
+
+    }
+
+}

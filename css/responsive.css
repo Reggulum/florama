@@ -1,0 +1,252 @@
+/* =========================================
+   ADAPTACIÓN PARA CELULARES
+   ========================================= */
+
+@media (max-width: 600px) {
+
+
+    /* =====================================
+       ESCENA
+       ===================================== */
+
+    .escena {
+        width: 100%;
+        height: 100dvh;
+        min-height: 100vh;
+    }
+
+
+    /* =====================================
+       LUNA
+       ===================================== */
+
+    .luna {
+
+        width: 80px;
+        height: 80px;
+
+        right: 8%;
+        top: 9%;
+
+        background: #fff5c4;
+
+        box-shadow:
+            0 0 25px rgba(255, 245, 196, .8),
+            0 0 60px rgba(255, 245, 196, .35);
+
+        z-index: 3;
+    }
+
+
+    /* =====================================
+       ESTRELLAS
+       ===================================== */
+
+    .estrella {
+        z-index: 2;
+    }
+
+
+    /* =====================================
+       MENSAJE
+       ===================================== */
+
+    .mensaje {
+
+        top: 13%;
+
+        width: 92%;
+
+        z-index: 40;
+    }
+
+
+    .mensaje h1 {
+
+        font-size:
+            clamp(2rem, 9vw, 3rem);
+
+        line-height: 1.15;
+    }
+
+
+    .mensaje p {
+
+        padding: 0 15px;
+
+        font-size:
+            clamp(.95rem, 4vw, 1.15rem);
+
+        line-height: 1.6;
+    }
+
+
+    .firma {
+
+        font-size: 1rem;
+
+        margin-top: 18px;
+    }
+
+
+    /* =====================================
+       SUELO
+       ===================================== */
+
+    .suelo {
+
+        height: 25%;
+
+        z-index: 5;
+    }
+
+
+    /* =====================================
+       CAMPO DE FLORES
+       ===================================== */
+
+    .campo-flores {
+
+        height: 43%;
+
+        bottom: 0;
+
+        z-index: 20;
+
+        overflow: visible;
+    }
+
+
+    /* =====================================
+       FLORES DEL SUELO
+       ===================================== */
+
+    .flor {
+
+        z-index: 25;
+    }
+
+
+    /* Flores de los extremos
+       se mantienen visibles */
+
+    .flor-1 {
+        left: -4%;
+        transform: scale(.65);
+    }
+
+
+    .flor-2 {
+        left: 12%;
+        transform: scale(.85);
+    }
+
+
+    .flor-3 {
+        left: 27%;
+        transform: scale(.65);
+    }
+
+
+    .flor-4 {
+        left: 42%;
+        transform: scale(.9);
+    }
+
+
+    .flor-5 {
+        left: 57%;
+        transform: scale(.7);
+    }
+
+
+    .flor-6 {
+        left: 72%;
+        transform: scale(.85);
+    }
+
+
+    .flor-7 {
+        left: 87%;
+        transform: scale(.65);
+    }
+
+
+    /* =====================================
+       BOTÓN DE MÚSICA
+       ===================================== */
+
+    .musica {
+
+        right: 15px;
+        top: 15px;
+
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.1rem;
+
+        z-index: 100;
+    }
+
+
+    /* =====================================
+       BOTÓN / MENSAJE FINAL
+       ===================================== */
+
+    .boton-mensaje {
+
+        bottom: 18px;
+
+        width: auto;
+
+        max-width: 85%;
+
+        padding:
+            10px 20px;
+
+        font-size: .9rem;
+
+        z-index: 60;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================
+       CARTA
+       ===================================== */
+
+    .carta {
+
+        padding: 15px;
+    }
+
+
+    .carta-contenido {
+
+        width: 94%;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+
+        padding:
+            28px 20px;
+    }
+
+
+    .carta-contenido h2 {
+
+        font-size: 1.6rem;
+    }
+
+
+    .carta-contenido p {
+
+        font-size: 1rem;
+
+        line-height: 1.7;
+    }
+
+}

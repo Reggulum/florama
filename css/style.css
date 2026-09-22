@@ -1,0 +1,781 @@
+
+:root {
+
+    --amarillo: #ffd93d;
+
+    --amarillo-claro: #fff176;
+
+    --dorado: #f6b93b;
+
+    --verde: #274d1c;
+
+    --verde-oscuro: #172b16;
+
+    --blanco: #fffaf0;
+
+    --texto-oscuro: #503c13;
+
+}
+
+
+
+/* ======================================================
+   CONFIGURACIÓN GENERAL
+   ====================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #182848 0%,
+            #4b3b68 35%,
+            #f29f58 70%,
+            #f8d57e 100%
+        );
+
+}
+
+
+
+/* ======================================================
+   PANTALLA INICIAL
+   ====================================================== */
+
+#inicio {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 214, 74, .15),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #15152b,
+            #2e2451,
+            #6b4260
+        );
+
+    transition:
+        opacity 1.5s ease;
+
+}
+
+
+#inicio.ocultar {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+
+/* ======================================================
+   TÍTULO INICIAL
+   ====================================================== */
+
+.titulo-inicial {
+
+    font-size:
+        clamp(2.5rem, 7vw, 5rem);
+
+    color:
+        var(--amarillo-claro);
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255,230,109,.6),
+
+        0 0 30px
+        rgba(255,194,61,.4);
+
+    animation:
+        aparecer 2s ease;
+
+}
+
+
+.subtitulo {
+
+    margin-top: 15px;
+
+    font-size: 1.2rem;
+
+    opacity: .85;
+
+    animation:
+        aparecer 3s ease;
+
+}
+
+
+
+/* ======================================================
+   BOTÓN PRINCIPAL
+   ====================================================== */
+
+.boton-abrir {
+
+    margin-top: 40px;
+
+    padding:
+        16px 35px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--amarillo),
+            var(--dorado)
+        );
+
+    color: #4a3200;
+
+    font-size: 1.05rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0,0,0,.25),
+
+        0 0 25px
+        rgba(255,214,74,.35);
+
+    transition: .3s;
+
+}
+
+
+.boton-abrir:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.3),
+
+        0 0 35px
+        rgba(255,214,74,.6);
+
+}
+
+
+
+/* ======================================================
+   ESCENA PRINCIPAL
+   ====================================================== */
+
+.escena {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+}
+
+
+
+/* ======================================================
+   LUNA
+   ====================================================== */
+
+.luna {
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #fff5c4;
+
+    right: 12%;
+    top: 10%;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,245,196,.7),
+
+        0 0 80px
+        rgba(255,245,196,.25);
+
+    animation:
+        flotar 6s ease-in-out infinite;
+
+    z-index: 3;
+
+}
+
+
+
+/* ======================================================
+   ESTRELLAS
+   ====================================================== */
+
+.estrella {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px white;
+
+    animation:
+        parpadear 2s infinite alternate;
+
+}
+
+
+.estrella-1 {
+    left: 10%;
+    top: 12%;
+}
+
+.estrella-2 {
+    left: 20%;
+    top: 22%;
+}
+
+.estrella-3 {
+    left: 31%;
+    top: 9%;
+}
+
+.estrella-4 {
+    left: 43%;
+    top: 17%;
+}
+
+.estrella-5 {
+    left: 55%;
+    top: 8%;
+}
+
+.estrella-6 {
+    left: 70%;
+    top: 19%;
+}
+
+.estrella-7 {
+    left: 84%;
+    top: 7%;
+}
+
+.estrella-8 {
+    left: 93%;
+    top: 27%;
+}
+
+
+
+/* ======================================================
+   MENSAJE PRINCIPAL
+   ====================================================== */
+
+.mensaje {
+
+    position: absolute;
+
+    top: 13%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(90%, 700px);
+
+    text-align: center;
+
+    z-index: 20;
+
+    opacity: 0;
+
+    animation:
+        mensajeEntrada
+        2s
+        1.5s
+        forwards;
+
+}
+
+
+.mensaje h1 {
+
+    font-size:
+        clamp(2.3rem, 6vw, 4.5rem);
+
+    color:
+        #fff7b2;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255,230,100,.8),
+
+        0 0 35px
+        rgba(255,190,40,.5);
+
+}
+
+
+.mensaje p {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(1rem, 2vw, 1.3rem);
+
+    line-height: 1.7;
+
+    color:
+        var(--blanco);
+
+}
+
+
+.firma {
+
+    margin-top: 25px;
+
+    font-size: 1.2rem;
+
+    color:
+        #ffe066;
+
+    font-style: italic;
+
+}
+
+
+
+/* ======================================================
+   SUELO
+   ====================================================== */
+
+.suelo {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 25%;
+
+    background:
+
+        linear-gradient(
+            to top,
+            var(--verde-oscuro),
+            var(--verde)
+        );
+
+    border-radius:
+        50% 50% 0 0 /
+        15% 15% 0 0;
+
+    z-index: 5;
+
+}
+
+
+
+/* ======================================================
+   BOTÓN DE MÚSICA
+   ====================================================== */
+
+.musica {
+
+    position: fixed;
+
+    right: 25px;
+
+    top: 25px;
+
+    z-index: 100;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    background:
+        rgba(0,0,0,.25);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.musica:hover {
+
+    transform:
+        scale(1.1);
+
+    background:
+        rgba(255,255,255,.15);
+
+}
+
+
+
+/* ======================================================
+   BOTÓN DE CARTA
+   ====================================================== */
+
+.boton-mensaje {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 30;
+
+    padding:
+        12px 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+
+    border-radius: 30px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.boton-mensaje:hover {
+
+    background:
+        rgba(255,255,255,.15);
+
+    transform:
+        translateX(-50%)
+        scale(1.05);
+
+}
+
+
+
+/* ======================================================
+   CARTA
+   ====================================================== */
+
+.carta {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(12,12,25,.75);
+
+    backdrop-filter:
+        blur(8px);
+
+    z-index: 500;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .5s;
+
+}
+
+
+.carta.visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+.carta-contenido {
+
+    width:
+        min(90%, 600px);
+
+    padding:
+        45px 35px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fffdf0,
+            #fff3b0
+        );
+
+    color:
+        var(--texto-oscuro);
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.5);
+
+    transform:
+        scale(.8);
+
+    transition: .5s;
+
+}
+
+
+.carta.visible
+.carta-contenido {
+
+    transform:
+        scale(1);
+
+}
+
+
+.carta-contenido h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+.carta-contenido p {
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+}
+
+
+.cerrar {
+
+    margin-top: 25px;
+
+    padding:
+        10px 25px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background:
+        #d99c18;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+
+/* ======================================================
+   ANIMACIONES GENERALES
+   ====================================================== */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes mensajeEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+@keyframes flotar {
+
+    0%, 100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes parpadear {
+
+    from {
+
+        opacity: .2;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
